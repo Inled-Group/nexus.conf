@@ -1,0 +1,204 @@
+---
+---
+
+<section class="countdown-section">
+	<div class="countdown-container">
+		<h2 class="countdown-title gradient-text">Dentro de</h2>
+		<div class="countdown-display" id="countdown">
+			<div class="time-unit">
+				<span class="time-number" id="days">00</span>
+				<span class="time-label">Días</span>
+			</div>
+			<div class="time-separator">:</div>
+			<div class="time-unit">
+				<span class="time-number" id="hours">00</span>
+				<span class="time-label">Horas</span>
+			</div>
+			<div class="time-separator">:</div>
+			<div class="time-unit">
+				<span class="time-number" id="minutes">00</span>
+				<span class="time-label">Minutos</span>
+			</div>
+			<div class="time-separator">:</div>
+			<div class="time-unit">
+				<span class="time-number" id="seconds">00</span>
+				<span class="time-label">Segundos</span>
+			</div>
+		</div>
+		<p class="countdown-subtitle">¡Esperamos que os guste!</p>
+	</div>
+</section>
+
+<script>
+	function updateCountdown() {
+		// Fecha objetivo: 15 de marzo de 2025, 10:00 AM
+		const targetDate = new Date('2025-08-30T10:00:00').getTime();
+		const now = new Date().getTime();
+		const timeLeft = targetDate - now;
+
+		if (timeLeft > 0) {
+			const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+			document.getElementById('days').textContent = String(days).padStart(2, '0');
+			document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+			document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+			document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+		} else {
+			document.getElementById('days').textContent = '00';
+			document.getElementById('hours').textContent = '00';
+			document.getElementById('minutes').textContent = '00';
+			document.getElementById('seconds').textContent = '00';
+		}
+	}
+
+	// Actualizar cada segundo
+	setInterval(updateCountdown, 1000);
+	
+	// Actualizar inmediatamente
+	updateCountdown();
+</script>
+
+<style>
+	.countdown-section {
+		padding: 80px 24px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 40vh;
+	}
+
+	.countdown-container {
+		text-align: center;
+		max-width: 800px;
+	}
+
+	.countdown-title {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 32px;
+		animation: pulse-glow 2s ease-in-out infinite alternate;
+	}
+
+	.countdown-display {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		margin-bottom: 24px;
+		flex-wrap: wrap;
+	}
+
+	.time-unit {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 24px;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 16px;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(10px);
+		min-width: 100px;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.time-unit::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+		transition: left 0.5s ease;
+	}
+
+	.time-unit:hover::before {
+		left: 100%;
+	}
+
+	.time-unit:hover {
+		transform: translateY(-4px) scale(1.05);
+		box-shadow: 0 16px 32px rgba(255, 255, 255, 0.2);
+		border-color: rgba(255, 255, 255, 0.6);
+	}
+
+	.time-number {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 3rem;
+		font-weight: 700;
+		background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		line-height: 1;
+	}
+
+	.time-label {
+		font-size: 0.875rem;
+		color: rgba(255, 255, 255, 0.8);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-top: 8px;
+	}
+
+	.time-separator {
+		font-size: 3rem;
+		font-weight: 300;
+		color: #ffffff;
+		animation: blink 1s infinite;
+	}
+
+	.countdown-subtitle {
+		font-size: 1.25rem;
+		color: rgba(255, 255, 255, 0.7);
+		font-weight: 300;
+	}
+
+	@keyframes pulse-glow {
+		0% {
+			text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+		}
+		100% {
+			text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.4);
+		}
+	}
+
+	@keyframes blink {
+		0%, 50% {
+			opacity: 1;
+		}
+		51%, 100% {
+			opacity: 0.3;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.countdown-title {
+			font-size: 2rem;
+		}
+
+		.time-unit {
+			min-width: 80px;
+			padding: 16px;
+		}
+
+		.time-number {
+			font-size: 2rem;
+		}
+
+		.countdown-display {
+			gap: 8px;
+		}
+
+		.time-separator {
+			font-size: 2rem;
+		}
+	}
+</style>

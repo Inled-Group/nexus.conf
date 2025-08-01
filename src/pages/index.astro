@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WaveBackground from '../components/WaveBackground.astro';
+import Countdown from '../components/Countdown.astro';
+import Hero from '../components/Hero.astro';
+import Innovations from '../components/Innovations.astro';
+import VideoSection from '../components/VideoSection.astro';
+---
+
+<Layout>
+	<WaveBackground />
+	<main>
+		<Hero />
+		<Countdown />
+		<Innovations />
+		<!-- <VideoSection />-->
+	</main>
+</Layout>
+
+<style>
+	main {
+		position: relative;
+		z-index: 1;
+	}
+</style>

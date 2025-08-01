@@ -1,0 +1,330 @@
+---
+---
+
+<section class="video-section">
+	<div class="main-video-container">
+		<div class="video-header">
+			<h2 class="video-title gradient-text">Insight 25.2 - Video Principal</h2>
+			<p class="video-subtitle">
+				El video completo de la conferencia estará disponible después del evento
+			</p>
+		</div>
+
+		<div class="main-video-wrapper">
+			<div class="video-placeholder">
+				<div class="video-overlay">
+					<div class="play-icon">
+						<svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+							<polygon points="10,8 16,12 10,16" fill="currentColor"/>
+						</svg>
+					</div>
+					<div class="video-info">
+						<h3>Conferencia Completa</h3>
+						<p>Disponible después del 15 de Marzo</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="promotional-videos">
+		<div class="promo-header">
+			<h3 class="promo-title">Videos Promocionales</h3>
+			<p class="promo-subtitle">Adelantos y contenido exclusivo</p>
+		</div>
+
+		<div class="promo-grid">
+			<div class="promo-video hover-lift">
+				<div class="promo-thumbnail">
+					<div class="promo-play">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="5,3 19,12 5,21" fill="currentColor"/>
+						</svg>
+					</div>
+				</div>
+				<div class="promo-content">
+					<h4>Teaser Oficial</h4>
+					<p>Un vistazo a lo que nos espera</p>
+					<span class="duration">0:45</span>
+				</div>
+			</div>
+
+			<div class="promo-video hover-lift">
+				<div class="promo-thumbnail">
+					<div class="promo-play">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="5,3 19,12 5,21" fill="currentColor"/>
+						</svg>
+					</div>
+				</div>
+				<div class="promo-content">
+					<h4>Speakers Destacados</h4>
+					<p>Conoce a nuestros ponentes</p>
+					<span class="duration">1:20</span>
+				</div>
+			</div>
+
+			<div class="promo-video hover-lift">
+				<div class="promo-thumbnail">
+					<div class="promo-play">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="5,3 19,12 5,21" fill="currentColor"/>
+						</svg>
+					</div>
+				</div>
+				<div class="promo-content">
+					<h4>Innovaciones 2025</h4>
+					<p>El futuro está aquí</p>
+					<span class="duration">2:15</span>
+				</div>
+			</div>
+
+			<div class="promo-video hover-lift">
+				<div class="promo-thumbnail">
+					<div class="promo-play">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="5,3 19,12 5,21" fill="currentColor"/>
+						</svg>
+					</div>
+				</div>
+				<div class="promo-content">
+					<h4>Behind the Scenes</h4>
+					<p>Preparativos del evento</p>
+					<span class="duration">1:45</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.video-section {
+		padding: 120px 0;
+		background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.01) 50%, transparent 100%);
+	}
+
+	.main-video-container {
+		margin-bottom: 120px;
+	}
+
+	.video-header {
+		text-align: center;
+		margin-bottom: 60px;
+		padding: 0 24px;
+	}
+
+	.video-title {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 24px;
+	}
+
+	.video-subtitle {
+		font-size: 1.25rem;
+		color: rgba(255, 255, 255, 0.7);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.main-video-wrapper {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
+	}
+
+	.video-placeholder {
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%),
+					url('https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		cursor: pointer;
+		transition: all 0.5s ease;
+	}
+
+	.video-placeholder::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.4);
+		transition: all 0.3s ease;
+	}
+
+	.video-placeholder:hover::before {
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	.video-overlay {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		color: #ffffff;
+	}
+
+	.play-icon {
+		margin-bottom: 32px;
+		transition: all 0.3s ease;
+		animation: pulse-main 3s ease-in-out infinite;
+	}
+
+	.video-placeholder:hover .play-icon {
+		transform: scale(1.2);
+	}
+
+	.video-info h3 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 16px;
+		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	}
+
+	.video-info p {
+		font-size: 1.25rem;
+		color: rgba(255, 255, 255, 0.9);
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	}
+
+	.promotional-videos {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	.promo-header {
+		text-align: center;
+		margin-bottom: 60px;
+	}
+
+	.promo-title {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #ffffff;
+		margin-bottom: 16px;
+	}
+
+	.promo-subtitle {
+		font-size: 1.125rem;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.promo-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 32px;
+	}
+
+	.promo-video {
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 16px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.promo-video:hover {
+		background: rgba(255, 255, 255, 0.08);
+		border-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.promo-thumbnail {
+		aspect-ratio: 16/9;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%),
+					url('https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=600') center/cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		transition: all 0.3s ease;
+	}
+
+	.promo-thumbnail::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.3);
+		transition: all 0.3s ease;
+	}
+
+	.promo-video:hover .promo-thumbnail::before {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	.promo-play {
+		position: relative;
+		z-index: 2;
+		color: #ffffff;
+		transition: all 0.3s ease;
+	}
+
+	.promo-video:hover .promo-play {
+		transform: scale(1.2);
+	}
+
+	.promo-content {
+		padding: 20px;
+	}
+
+	.promo-content h4 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #ffffff;
+		margin-bottom: 8px;
+	}
+
+	.promo-content p {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 0.875rem;
+		margin-bottom: 12px;
+	}
+
+	.duration {
+		background: rgba(255, 255, 255, 0.1);
+		color: #ffffff;
+		padding: 4px 8px;
+		border-radius: 12px;
+		font-size: 0.75rem;
+		font-weight: 500;
+	}
+
+	@keyframes pulse-main {
+		0%, 100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+		50% {
+			opacity: 0.8;
+			transform: scale(1.05);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.video-title {
+			font-size: 2.5rem;
+		}
+
+		.video-info h3 {
+			font-size: 2rem;
+		}
+
+		.promo-title {
+			font-size: 2rem;
+		}
+
+		.promo-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

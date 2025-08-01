@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+		<title>Insight 25.2 - Inled Group | Conferencia de Innovación</title>
+		<meta name="description" content="Únete a la conferencia Insight 25.2 de Inled Group. Descubre las últimas novedades e innovaciones tecnológicas.">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background: #000000;
+		color: #ffffff;
+		overflow-x: hidden;
+		line-height: 1.6;
+	}
+
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #111111;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #ffffff;
+		border-radius: 4px;
+	}
+
+	.gradient-text {
+		background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.glass-effect {
+		background: rgba(255, 255, 255, 0.05);
+		backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 16px;
+	}
+
+	.hover-lift {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.hover-lift:hover {
+		transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+		box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+	}
+</style>
